@@ -3,7 +3,7 @@
 <script src="spin.min.js"></script>
 <body style="margin:0;background:#000;text-align:center;">
 <div id="laforge"></div>
-<a style="z-order:10;" href="http://sourceforge.net/"><img src="forkme.png" style="position:fixed;top:0;right:0;"></a>
+<a id="forkme" style="z-index:10;visibility:hidden;" href="http://sourceforge.net/"><img src="forkme.png" style="position:fixed;top:0;right:0;"></a>
 <script>
 var opts = {
   lines: 12, // The number of lines to draw
@@ -21,6 +21,7 @@ window.onload = function() {
   i.onload = function() {
     s.stop();
     document.getElementById('laforge').appendChild(i);
+    document.getElementById('forkme').style.visibility = 'visible';
   };
   i.src = 'laforge.jpg'
 }
