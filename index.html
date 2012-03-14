@@ -1,5 +1,27 @@
 <!doctype html>
 <title>Source LaForge</title>
+<script src="spin.min.js"></script>
 <body style="margin:0;background:#000;text-align:center;">
-<img src="laforge.jpg">
+<div id="laforge"></div>
 <a style="z-order:10;" href="http://sourceforge.net/"><img src="forkme.png" style="position:fixed;top:0;right:0;"></a>
+<script>
+var opts = {
+  lines: 12, // The number of lines to draw
+  length: 22, // The length of each line
+  width: 9, // The line thickness
+  radius: 31, // The radius of the inner circle
+  color: '#FFF', // #rgb or #rrggbb
+  speed: 1, // Rounds per second
+  trail: 60, // Afterglow percentage
+  top: 100
+};
+window.onload = function() {
+  s = new Spinner(opts).spin(document.getElementById('laforge'));
+  i = new Image();
+  i.onload = function() {
+    s.stop();
+    document.getElementById('laforge').appendChild(i);
+  };
+  i.src = 'laforge.jpg'
+}
+</script>
